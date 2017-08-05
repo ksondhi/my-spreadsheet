@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { SpreadsheetComponent } from './spreadsheet/spreadsheet.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { DemoComponent } from './demo/demo.component';
 
 export const ROUTES: Routes = [
   {path: 'spreadsheet', component: SpreadsheetComponent},
+  {path: 'demo', component: DemoComponent},
   {path: '', redirectTo: '/spreadsheet', pathMatch: 'full'},
   {path: '**', redirectTo: '/spreadsheet', pathMatch: 'full'}
 ];
@@ -18,7 +20,8 @@ export const ROUTES: Routes = [
     AppComponent,
     SpreadsheetComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,
