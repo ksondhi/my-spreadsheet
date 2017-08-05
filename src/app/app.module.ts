@@ -7,6 +7,7 @@ import { SpreadsheetComponent } from './spreadsheet/spreadsheet.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DemoComponent } from './demo/demo.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 export const ROUTES: Routes = [
   {path: 'spreadsheet', component: SpreadsheetComponent},
@@ -21,7 +22,8 @@ export const ROUTES: Routes = [
     SpreadsheetComponent,
     HeaderComponent,
     FooterComponent,
-    DemoComponent
+    DemoComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
