@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { SpreadsheetComponent } from './spreadsheet/spreadsheet.component';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 export const ROUTES: Routes = [
   {path: 'spreadsheet', component: SpreadsheetComponent},
@@ -16,7 +17,8 @@ export const ROUTES: Routes = [
   declarations: [
     AppComponent,
     SpreadsheetComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
