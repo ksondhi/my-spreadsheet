@@ -10,6 +10,8 @@ import { DemoComponent } from './demo/demo.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SpreadsheetTableComponent } from './spreadsheet-table/spreadsheet-table.component';
 
+import { StarRatingModule} from 'angular-star-rating';
+
 export const ROUTES: Routes = [
   {path: 'spreadsheet', component: SpreadsheetComponent},
   {path: 'demo', component: DemoComponent},
@@ -25,11 +27,12 @@ export const ROUTES: Routes = [
     FooterComponent,
     DemoComponent,
     NavBarComponent,
-    SpreadsheetTableComponent
+    SpreadsheetTableComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    StarRatingModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
