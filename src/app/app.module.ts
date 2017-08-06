@@ -11,6 +11,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SpreadsheetTableComponent } from './spreadsheet-table/spreadsheet-table.component';
 
 import { StarRatingModule} from 'angular-star-rating';
+import { SpreadsheetTableRowComponent } from './spreadsheet-table-row/spreadsheet-table-row.component';
 
 export const ROUTES: Routes = [
   {path: 'spreadsheet', component: SpreadsheetComponent},
@@ -28,6 +29,7 @@ export const ROUTES: Routes = [
     DemoComponent,
     NavBarComponent,
     SpreadsheetTableComponent,
+    SpreadsheetTableRowComponent,
   ],
   imports: [
     BrowserModule,
