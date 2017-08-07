@@ -10,24 +10,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>August 5th 2017</td>
-        <td>Pull</td>
-        <td>Did rear delts, traps, back and bis</td>
-        <td><star-rating-comp [starType]="'icon'" [rating]="2.63"></star-rating-comp></td>
-      </tr>
-      <tr>
-        <td>August 4th 2017</td>
-        <td>Legs</td>
-        <td>Did front and back squats, hamstrings and calves</td>
-        <td>Okay</td>
-      </tr>
-      <tr>
-        <td>August 3rd 2017</td>
-        <td>Push</td>
-        <td>Did chest, lateral raises, triceps</td>
-        <td>Bad</td>
-      </tr>
+      <tr *ngFor="let log of workoutLogs">
+        <td>{{ log.dateCreated}}</td>
+        <td>{{ log.workoutType }}</td>
+        <td>{{ log.description}}</td>
+        <td>{{ log.rating}}</td>
+      </tr> 
     </tbody>
   </table>
 

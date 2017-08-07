@@ -1,13 +1,20 @@
+import { WorkoutLog } from '../models/workout-log';
+import { WorkoutJournalService } from './../workout/workout-journal.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-spreadsheet-table',
   templateUrl: './spreadsheet-table.component.html',
-  styleUrls: ['./spreadsheet-table.component.scss']
+  styleUrls: ['./spreadsheet-table.component.scss'],
+  providers: [WorkoutJournalService]
 })
 export class SpreadsheetTableComponent implements OnInit {
 
-  constructor() { }
+  workoutLogs: Array<WorkoutLog>;
+
+  constructor(private workoutJournalService: WorkoutJournalService) {
+    this.workoutLogs = workoutJournalService.getWorkoutLogs();
+  }
 
   ngOnInit() {
   }
