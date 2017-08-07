@@ -7,6 +7,7 @@
         <th>Workout Type</th>
         <th>Description</th>
         <th>Rating</th>
+        <th>Rating number</th>
       </tr>
     </thead>
     <tbody>
@@ -14,6 +15,7 @@
         <td>{{ log.dateCreated}}</td>
         <td>{{ log.workoutType }}</td>
         <td>{{ log.description}}</td>
+        <td><star-rating-comp (onClick)="this.onClick($event)" (onRatingChange)="this.onRatingChange($event)" [starType]="'icon'" [rating]='log.rating'></star-rating-comp></td>
         <td>{{ log.rating}}</td>
       </tr> 
     </tbody>
