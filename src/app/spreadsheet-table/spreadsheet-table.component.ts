@@ -12,8 +12,6 @@ import { IStarRatingOnClickEvent, IStarRatingOnRatingChangeEven } from 'angular-
 export class SpreadsheetTableComponent implements OnInit {
 
   workoutLogs: Array<WorkoutLog>;
-  onClickResult: IStarRatingOnClickEvent;
-  onRatingChangeResult: IStarRatingOnRatingChangeEven;
 
   constructor(private workoutJournalService: WorkoutJournalService) {
 
@@ -23,14 +21,12 @@ export class SpreadsheetTableComponent implements OnInit {
     this.workoutJournalService.getWorkoutLogs().subscribe(data => this.workoutLogs = data);
   }
 
-  onClick = ($event: IStarRatingOnClickEvent) => {
-    console.log('onClick $event: ', $event);
-    this.onClickResult = $event;
+  onClick = ($event: IStarRatingOnClickEvent, log: WorkoutLog) => {
+    log.rating = $event.rating;
   }
 
-  onRatingChange = ($event: IStarRatingOnRatingChangeEven) => {
-    console.log('onRatingUpdated $event: ', $event);
-    this.onRatingChangeResult = $event;
+  onRatingChange = ($event: IStarRatingOnRatingChangeEven, log: WorkoutLog) => {
+    log.rating = $event.rating;
   }
 }
 
