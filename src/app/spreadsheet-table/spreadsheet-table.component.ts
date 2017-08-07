@@ -5,8 +5,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-spreadsheet-table',
   templateUrl: './spreadsheet-table.component.html',
-  styleUrls: ['./spreadsheet-table.component.scss'],
-  providers: [WorkoutJournalService]
+  styleUrls: ['./spreadsheet-table.component.scss']
 })
 export class SpreadsheetTableComponent implements OnInit {
 
@@ -17,7 +16,7 @@ export class SpreadsheetTableComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.workoutLogs = this.workoutJournalService.getWorkoutLogs();
+      this.workoutJournalService.getWorkoutLogs().subscribe(data => this.workoutLogs = data);
   }
 }
 

@@ -10,6 +10,8 @@ import { DemoComponent } from './demo/demo.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SpreadsheetTableComponent } from './spreadsheet-table/spreadsheet-table.component';
 
+import { WorkoutJournalService } from './workout/workout-journal.service';
+
 import { StarRatingModule} from 'angular-star-rating';
 
 export const ROUTES: Routes = [
@@ -34,7 +36,7 @@ export const ROUTES: Routes = [
     RouterModule.forRoot(ROUTES),
     StarRatingModule.forRoot()
   ],
-  providers: [],
+  providers: [WorkoutJournalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
