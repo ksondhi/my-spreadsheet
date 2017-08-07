@@ -13,10 +13,11 @@ export class SpreadsheetTableComponent implements OnInit {
   workoutLogs: Array<WorkoutLog>;
 
   constructor(private workoutJournalService: WorkoutJournalService) {
-    this.workoutLogs = workoutJournalService.getWorkoutLogs();
+
   }
 
   ngOnInit() {
+      this.workoutLogs = this.workoutJournalService.getWorkoutLogs();
   }
-
 }
+
