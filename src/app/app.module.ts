@@ -2,15 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule} from '@ngrx/store-devtools';
+import { workoutsReducer } from './reducers/workouts.reducer';
+
 import { AppComponent } from './app.component';
 import { SpreadsheetComponent } from './spreadsheet/spreadsheet.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DemoComponent } from './demo/demo.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { SpreadsheetTableComponent } from './spreadsheet-table/spreadsheet-table.component';
+import { SpreadsheetTableComponent } from './spreadsheet/spreadsheet-table/spreadsheet-table.component';
 
-import { WorkoutJournalService } from './workout/workout-journal.service';
+import { DataService } from './data/data.service';
 
 import { StarRatingModule} from 'angular-star-rating';
 
@@ -34,9 +38,12 @@ export const ROUTES: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
-    StarRatingModule.forRoot()
+    StarRatingModule.forRoot(),
+    StoreModule.provideStore({ workoutsReducer }),
+    StoreDevtoolsModule.instrumentOnlyWithExtension()
+
   ],
-  providers: [WorkoutJournalService],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
