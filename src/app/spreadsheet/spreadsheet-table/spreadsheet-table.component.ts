@@ -22,8 +22,9 @@ export class SpreadsheetTableComponent implements OnInit {
 
   ngOnInit() {
     this.store.select<IWorkoutState>('workoutsReducer').subscribe(workoutState => {
-      this.workouts = workoutState.workouts;
-      console.log('The user is ', workoutState.user);
+      console.log('State: ', workoutState);
+      //this.workouts = workoutState.workouts;
+      //console.log('The user is ', workoutState.user);
     });
   }
 

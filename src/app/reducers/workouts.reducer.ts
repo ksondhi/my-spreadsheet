@@ -1,3 +1,4 @@
+import { IWorkoutState } from './workouts.reducer';
 import { LOAD_WORKOUTS, SAVE_WORKOUT, FETCH_WORKOUT } from './../actions/workout.action';
 import { Action } from '@ngrx/store';
 import { Workout } from './../models/workout.model';
@@ -13,7 +14,7 @@ export const initialState: IWorkoutState = {
     user: 'kabir.sondhi',
 };
 
-export const workoutsReducer = (state: IWorkoutState = initialState, action: Action) => {
+export function workoutsReducer (state: IWorkoutState = initialState, action: Action) {
     switch (action.type) {
         case LOAD_WORKOUTS:
             return Object.assign({}, state);
@@ -22,7 +23,8 @@ export const workoutsReducer = (state: IWorkoutState = initialState, action: Act
         case FETCH_WORKOUT:
             return Object.assign({}, state.workouts.find(workout => workout.workoutId === action.payload.workoutId));
         default:
+            console.log('The state is ', state);
             return state;
     }
-};
+}
 
