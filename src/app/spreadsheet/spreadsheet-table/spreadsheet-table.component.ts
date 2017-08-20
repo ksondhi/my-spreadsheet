@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import { workoutsReducer, IWorkoutState } from './../../reducers/workouts.reducer';
+import { IWorkoutState } from './../../reducers/workouts.reducer';
 import { IAppState } from './../../app.state';
 
 import { Workout } from './../../models/workout.model';
@@ -23,8 +23,10 @@ export class SpreadsheetTableComponent implements OnInit {
   ngOnInit() {
     this.store.select<IWorkoutState>('workoutsReducer').subscribe(workoutState => {
       console.log('State: ', workoutState);
-      //this.workouts = workoutState.workouts;
-      //console.log('The user is ', workoutState.user);
+      if (workoutState) {
+        this.workouts = workoutState.workouts;
+        console.log('The user is: ', workoutState.user);
+      }
     });
   }
 
