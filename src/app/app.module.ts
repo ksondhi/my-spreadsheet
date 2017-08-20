@@ -1,4 +1,4 @@
-import { workoutsReducer } from './reducers/workouts.reducer';
+import { appReducers } from './app.state';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -39,7 +39,7 @@ export const ROUTES: Routes = [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
     StarRatingModule.forRoot(),
-    StoreModule.provideStore({ workoutsReducer }),
+    StoreModule.provideStore(appReducers),
     StoreDevtoolsModule.instrumentOnlyWithExtension()
 
   ],
