@@ -1,5 +1,6 @@
+import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import { workoutsReducer } from './../../reducers/workouts.reducer';
+import { workoutsReducer, IWorkoutState } from './../../reducers/workouts.reducer';
 import { IAppState } from './../../app.state';
 
 import { Workout } from './../../models/workout.model';
@@ -20,11 +21,8 @@ export class SpreadsheetTableComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('about to call select');
-    this.store.select(state => state).subscribe(state => {
-      console.log('State: ', state);
-      console.log('Workouts: ', state.workoutState );
-     // console.log('Kabir: ', workoutState.kabir);
+    this.store.select<IWorkoutState>('workoutsReducer').subscribe(workoutState => {
+      this.workouts = workoutState.workouts;
     });
   }
 

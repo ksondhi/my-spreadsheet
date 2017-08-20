@@ -14,7 +14,6 @@ export const initialState: IWorkoutState = {
 };
 
 export const workoutsReducer = (state: IWorkoutState = initialState, action: Action) => {
-    console.log('In reducer with state: ', state);
     switch (action.type) {
         case LOAD_WORKOUTS:
             return Object.assign({}, state);
@@ -23,7 +22,6 @@ export const workoutsReducer = (state: IWorkoutState = initialState, action: Act
         case FETCH_WORKOUT:
             return Object.assign({}, state.workouts.find(workout => workout.workoutId === action.payload.workoutId));
         default:
-            console.log('about to return state: ', state);
             return state;
     }
 };

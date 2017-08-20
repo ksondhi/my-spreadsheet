@@ -12,11 +12,11 @@
     </thead>
     <tbody>
       <tr *ngFor="let log of workouts">
-        <td>{{ log.dateCreated}}</td>
+        <td>{{ log.dateCreated }}</td>
         <td>{{ log.workoutType }}</td>
-        <td>{{ log.description}}</td>
+        <td>{{ log.description }}</td>
         <td><star-rating-comp [numOfStars]="3" (onClick)="onClick($event, log)" (onRatingChange)="onRatingChange($event, log)" [starType]="'icon'" [rating]='log.rating'></star-rating-comp></td>
-        <td>{{ log.rating}}</td>
+        <td>{{ log.rating }}</td>
       </tr> 
     </tbody>
   </table>
