@@ -40,7 +40,7 @@ export const ROUTES: Routes = [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
     StarRatingModule.forRoot(),
-    StoreModule.provideStore({workoutsReducer}),
+    StoreModule.provideStore(appReducers),
     StoreDevtoolsModule.instrumentOnlyWithExtension()
 
   ],
