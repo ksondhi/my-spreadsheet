@@ -5,4 +5,3 @@ import { combineReducers } from '@ngrx/store';
 export interface IAppState {
     workoutState: IWorkoutState;
 }
-

@@ -1,10 +1,10 @@
+import { workoutsReducer } from './reducers/workouts.reducer';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { StoreModule, combineReducers } from '@ngrx/store';
 import { StoreDevtoolsModule} from '@ngrx/store-devtools';
-import { workoutsReducer } from './reducers/workouts.reducer';
 
 import { AppComponent } from './app.component';
 import { SpreadsheetComponent } from './spreadsheet/spreadsheet.component';
