@@ -1,5 +1,6 @@
 import { Store } from '@ngrx/store';
-import { IAppState } from './../../reducers/workouts.reducer';
+import { workoutsReducer } from './../../reducers/workouts.reducer';
+import { IAppState } from './../../app.state';
 
 import { Workout } from './../../models/workout.model';
 import { Component, OnInit } from '@angular/core';
@@ -21,8 +22,9 @@ export class SpreadsheetTableComponent implements OnInit {
   ngOnInit() {
     console.log('about to call select');
     this.store.select(state => state).subscribe(state => {
-      console.log('Workouts: ', state);
-      this.workouts = state.workouts;
+      console.log('State: ', state);
+      console.log('Workouts: ', state.workoutState );
+     // console.log('Kabir: ', workoutState.kabir);
     });
   }
 

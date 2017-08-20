@@ -3,19 +3,21 @@ import { Action } from '@ngrx/store';
 import { Workout } from './../models/workout.model';
 import { WORKOUTS } from './../mock-data/mock-workouts';
 
-export interface IAppState {
+export interface IWorkoutState {
     readonly workouts: Workout[];
+    readonly user: string;
 }
 
-export const initialState: IAppState = {
+export const initialState: IWorkoutState = {
     workouts: WORKOUTS,
+    user: 'kabir.sondhi',
 };
 
-export function workoutsReducer (state: IAppState = initialState, action: Action) {
+export const workoutsReducer = (state: IWorkoutState = initialState, action: Action) => {
     console.log('In reducer with state: ', state);
     switch (action.type) {
         case LOAD_WORKOUTS:
-            return Object.assign({}, state.workouts);
+            return Object.assign({}, state);
         case SAVE_WORKOUT:
             return Object.assign({}, state, action.payload);
         case FETCH_WORKOUT:
@@ -24,5 +26,5 @@ export function workoutsReducer (state: IAppState = initialState, action: Action
             console.log('about to return state: ', state);
             return state;
     }
-}
+};
 
